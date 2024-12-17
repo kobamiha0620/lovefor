@@ -1,0 +1,8 @@
+@use "../global/"as g;
+
+.l-footer {
+}
+@include g.mq(pc){
+}
+@include g.mq(sp){
+}

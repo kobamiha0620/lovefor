@@ -1,0 +1,48 @@
+<%
+const pageinit = {
+  title : 'レバレジーズスタッフィング株式会社' ,
+  keywords : '' ,
+  sitename: 'レバレジーズスタッフィング株式会社',
+  description : 'レバレジーズスタッフィング株式会社のコーポレートサイトです。会社概要・採用情報などについて紹介しています。' ,
+  ogurl: 'https://leverages-staffing.jp/',
+  ogimage: 'https://leverages-staffing.jp/img/ogp.jpg',
+  path : './' ,
+  type: 'website',
+  pagename : 'TOP',
+  robots : ['index', 'follow'],
+  id: 'home',
+  js:'home',
+  // jsfunc:[]
+};
+%>
+
+<!doctype html>
+<html lang="ja" class="lang-jp" data-script-enabled="true">
+<%- include(pageinit.path + 'module/_head.ejs',{ pageinit:pageinit }) %>
+
+<body id="<%= pageinit.id %>">
+  <!-- 全ページ共通 -->
+  <div class="wrapper">
+    <%- include(pageinit.path + 'module/_header.ejs', { pageinit:pageinit }) %>
+    <!-- 全ページ共通 -->
+
+    <main class="l-main" id="main">
+      <!-- 各ページ -->
+      <%- include(pageinit.path + 'module/_home.ejs', { pageinit:pageinit }) %>
+      <!-- 各ページ -->
+    </main>
+
+    <!-- 全ページ共通 -->
+    <footer class="footer" id="footer">
+      <%- include(pageinit.path + 'module/_footer.ejs', { pageinit:pageinit }) %>
+    </footer>
+  </div>
+  <!-- /.wrapper -->
+
+  <script type="text/javascript" src="<%= pageinit.path %>js/<%= pageinit.js %>.js"></script>
+  <!-- 全ページ共通 -->
+
+
+</body>
+
+</html>

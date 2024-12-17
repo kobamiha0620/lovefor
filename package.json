@@ -1,0 +1,44 @@
+{
+  "name": "corpsite",
+  "version": "1.0.0",
+  "main": "index.ejs",
+  "scripts": {
+    "ejs": "ejs-cli -b src/ejs/ \"**/*.ejs\" -e \"module\" -o dist/",
+    "sass": "sass src/sass/style.scss:dist/css/style.css --no-source-map",
+    "dev:js": "NODE_ENV=development node esbuild.config.js",
+    "build:js": "NODE_ENV=production node esbuild.config.js",
+    "browser": "browser-sync start --config bs-config.js",
+    "dev:sass": "npm run sass -- --watch --source-map",
+    "dev:ejs": "chokidar \"src/ejs/\" -c \"npm run ejs\" --initial",
+    "dev": "run-p dev:sass dev:ejs dev:js browser",
+    "min:sass": "npm run sass -- --style=compressed",
+    "postcss": "postcss dist/css/style.css -o dist/css/style.css --use autoprefixer --use postcss-combine-media-query",
+    "clean:css.map": "rimraf dist/css/*.map",
+    "build:sass": "run-s min:sass postcss clean:css.map",
+    "lint:scss": "stylelint 'src/sass/**/*.scss'"
+  },
+  "keywords": [],
+  "author": "chatmonster",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "browser-sync": "^3.0.3",
+    "chokidar-cli": "^3.0.0",
+    "cssnano": "^7.0.6",
+    "ejs-cli": "^2.2.3",
+    "esbuild": "^0.24.0",
+    "npm-run-all": "^2.1.0",
+    "onchange": "^7.1.0",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^11.0.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "rimraf": "^6.0.1",
+    "sass": "^1.80.7",
+    "stylelint": "^16.10.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ]
+}

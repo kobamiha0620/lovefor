@@ -1,0 +1,9 @@
+@use "../../global/" as g;
+
+.u-margin{
+  
+}
+@include g.mq(pc){
+}
+@include g.mq(sp){
+}

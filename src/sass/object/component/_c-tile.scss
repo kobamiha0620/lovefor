@@ -1,0 +1,8 @@
+@use "../../global/" as g;
+
+.c-tile{
+}
+@include g.mq(pc){
+}
+@include g.mq(sp){
+}

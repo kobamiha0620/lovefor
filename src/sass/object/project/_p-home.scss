@@ -1,0 +1,8 @@
+@use "../../global/"as g;
+
+.p-home {
+}
+@include g.mq(pc){
+}
+@include g.mq(sp){
+}

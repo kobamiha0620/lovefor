@@ -1,0 +1,12 @@
+@mixin font-rem($size) {
+  font-size: $size + px;
+  font-size: calc($size / 16) + rem;
+}
+
+
+@mixin p-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
